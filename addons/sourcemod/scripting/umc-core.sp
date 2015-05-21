@@ -1999,7 +1999,7 @@ new bool:core_vote_active;
 
 public bool:VM_IsVoteInProgress()
 {
-	return IsVoteInProgress();
+    return IsVoteInProgress();
 }
 
 //
@@ -2395,7 +2395,7 @@ bool:IsVMVoteInProgress(Handle:voteManager)
     new Function:progressCheck;
     GetTrieValue(voteManager, "checkprogress", progressCheck);
     new bool:result;
-	
+    
     if (progressCheck == INVALID_FUNCTION)
     {
         result = IsVoteInProgress();
@@ -4843,7 +4843,7 @@ DoMapChange(UMC_ChangeMapTime:when, Handle:kv, const String:map[], const String:
         {
             decl String:game[20];
             GetGameFolderName(game, sizeof(game));
-            if (!StrEqual(game, "gesource", false))
+            if (!StrEqual(game, "gesource", false) && !StrEqual(game, "empires", false))
             {
                 //Routine by Tsunami to end the map
                 new iGameEnd = FindEntityByClassname(-1, "game_end");

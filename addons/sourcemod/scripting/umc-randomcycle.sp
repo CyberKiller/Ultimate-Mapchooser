@@ -123,18 +123,20 @@ public OnPluginStart()
     );
     
     //Hook end of game.
-    HookEventEx("dod_game_over",      Event_GameEnd); //DoD
-    HookEventEx("teamplay_game_over", Event_GameEnd); //TF2
-    HookEventEx("tf_game_over",       Event_GameEnd); //TF2 (mp_winlimit)
-    HookEventEx("game_newmap",        Event_GameEnd); //Insurgency
-    HookEventEx("cs_intermission",    Event_GameEnd); //CS:GO
+    HookEventEx("dod_game_over",         Event_GameEnd); //DoD
+    HookEventEx("teamplay_game_over",    Event_GameEnd); //TF2
+    HookEventEx("tf_game_over",          Event_GameEnd); //TF2 (mp_winlimit)
+    HookEventEx("game_newmap",           Event_GameEnd); //Insurgency
+    HookEventEx("cs_intermission",       Event_GameEnd); //CS:GO
+    HookEventEx("switching_to_new_map",  Event_GameEnd); //Empires Mod
     
     //Hook intermission
     new String:game[20];
     GetGameFolderName(game, sizeof(game));
     if (!StrEqual(game, "tf", false) &&
         !StrEqual(game, "dod", false) &&
-        !StrEqual(game, "insurgency", false))
+        !StrEqual(game, "insurgency", false) &&
+        !StrEqual(game, "empires", false))
     {
         LogUMCMessage("SETUP: Hooking intermission...");
         VGuiMenu = GetUserMessageId("VGUIMenu");
