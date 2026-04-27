@@ -1,7 +1,3 @@
-#This fork of umc is no longer being developed. DO NOT USE!
- The regular version of umc has support for empires now so use that instead:
- https://github.com/Steell/Ultimate-Mapchooser
-
 #Ultimate Mapchooser
 
 > <b>ul·ti·mate</b>  _/ˈəltəmit/_  
