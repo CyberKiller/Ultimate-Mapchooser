@@ -11,9 +11,10 @@ Built using sourcemod-1.6.0-hg4310-windows.
 
 ## How to install:
 Remove all old umc plugins from sourcemod\addons and sourcemod\addons\disabled.
-If you are moving from a very old version of umc then I recommend backing up the old config files for it then reconfiguring from scratch. (I recommend backing up your old config files anyway)
+If you are moving from a very old version of umc then I recommend backing up the old config files for it then reconfiguring from scratch. (I recommend backing up your old config files anyway).
 Extract the zip to your empires folder and install and configure umc as normal as detailed here: https://code.google.com/p/sourcemod-ultimate-mapchooser/wiki/HelpFAQ?tm=6
-Do not use this with any other version of umc or it's plugins.
+
+Do not use this any of this with any other version of umc or it's plugins. Compatibility issues and bugs will likely arise if you do.
 
 The empires game directory must be called 'empires' for instant map changes on vote success to work correctly.
 Failure to have the correct game directory name will result in the server getting stuck in limbo on end of map votes map changes!
