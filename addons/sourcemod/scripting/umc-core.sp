@@ -1999,7 +1999,7 @@ new bool:core_vote_active;
 
 public bool:VM_IsVoteInProgress()
 {
-    return IsVoteInProgress();
+	return IsVoteInProgress();
 }
 
 //
@@ -2395,7 +2395,7 @@ bool:IsVMVoteInProgress(Handle:voteManager)
     new Function:progressCheck;
     GetTrieValue(voteManager, "checkprogress", progressCheck);
     new bool:result;
-    
+	
     if (progressCheck == INVALID_FUNCTION)
     {
         result = IsVoteInProgress();
