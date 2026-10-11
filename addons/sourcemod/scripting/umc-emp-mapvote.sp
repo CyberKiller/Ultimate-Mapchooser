@@ -13,8 +13,8 @@ public Plugin:myinfo =
     name = "UMC Empires Map Vote",
     author = "CyberKiller",
     description = "Starts a map vote after commander vote ends or the end of a map. Based off umc-votecommand by Steell and EmpChooser by Joe 'Coffeeburrito' Wakefield",
-    version = "Beta 0.5",
-    url = ""
+    version = "Beta 0.6",
+    url = "https://github.com/CyberKiller/Ultimate-Mapchooser"
 };
 
         ////----CONVARS-----/////
@@ -261,7 +261,7 @@ public OnPluginStart()
 //Called after all config files were executed.
 public OnConfigsExecuted()
 {
-    DEBUG_MESSAGE("Executing EmpMapVote OnConfigsExecuted")
+//    DEBUG_MESSAGE("Executing EmpMapVote OnConfigsExecuted")
     
     g_bEndVotesEnabled = GetConVarBool(cvar_vote_endvote); //Are end votes enabled?
     
@@ -324,7 +324,7 @@ ResetMpChatTime();
 //Called each second of the comm vote timer?
 public Event_CommanderVoteTime(Handle:event, const String:name[], bool:dontBroadcast)
 {
-    DEBUG_MESSAGE("commander_vote_time event fired.")
+//    DEBUG_MESSAGE("commander_vote_time event fired.")
     
     if (g_bEndVotesEnabled)
         return; //Exit function if end votes are enabled.
@@ -340,7 +340,7 @@ public Event_CommanderVoteTime(Handle:event, const String:name[], bool:dontBroad
 //Called at round end
 public Event_GameEnd(Handle:event, const String:name[], bool:dontBroadcast)
 {
-    DEBUG_MESSAGE("game_end event fired.")
+//    DEBUG_MESSAGE("game_end event fired.")
     
     //If not already voted and not already vote triggered and end votes are enabled
     if(!g_bVoted && !g_bVoteTriggered && g_bEndVotesEnabled && !g_bMapVoteDisabled)
@@ -483,7 +483,7 @@ public StartEmpMapVote()
 
 #if UMC_DEBUG
     for (new i = 0; i < numClients; i++)
-        DEBUG_MESSAGE("Sending EmpMapVote to client: %i", clients[i])
+//        DEBUG_MESSAGE("Sending EmpMapVote to client: %i", clients[i])
 #endif
     
     //Start the UMC vote.
@@ -573,10 +573,10 @@ CheckChatTime()
 ResetMpChatTime()
 {
     //Reset mp_chattime because if end votes are disabled the server won't always change mp_chattime back when it execs it's configs....
-    DEBUG_MESSAGE("Resetting mp_chattime to: %f", g_oldChatTimeValue)
+//    DEBUG_MESSAGE("Resetting mp_chattime to: %f", g_oldChatTimeValue)
     g_bChatTimeBlocking = false; //stop mp_chattime from getting reset back to 120
     SetConVarFloat(cvar_mp_chattime, g_oldChatTimeValue);
-    DEBUG_MESSAGE("mp_chattime is now: %f", GetConVarFloat(cvar_mp_chattime))
+//    DEBUG_MESSAGE("mp_chattime is now: %f", GetConVarFloat(cvar_mp_chattime))
 }
 
 SetMaxMpChatTime()
@@ -617,7 +617,7 @@ DoRandomNextMap(UMC_ChangeMapTime:changeTime)
     if (UMC_GetRandomMap(map_kv, umc_mapcycle, INVALID_GROUP, nextMap, sizeof(nextMap), nextGroup,
                          sizeof(nextGroup), false, true))
     {
-        DEBUG_MESSAGE("Random map: %s %s", nextMap, nextGroup)
+//        DEBUG_MESSAGE("Random map: %s %s", nextMap, nextGroup)
         UMC_SetNextMap(map_kv, nextMap, nextGroup, changeTime);
     }
     else
