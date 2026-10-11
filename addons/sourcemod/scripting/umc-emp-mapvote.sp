@@ -481,10 +481,10 @@ public StartEmpMapVote()
     new numClients;
     GetClientsWithFlags(flags, clients, sizeof(clients), numClients);
 
-#if UMC_DEBUG
-    for (new i = 0; i < numClients; i++)
+//#if UMC_DEBUG
+//    for (new i = 0; i < numClients; i++)
 //        DEBUG_MESSAGE("Sending EmpMapVote to client: %i", clients[i])
-#endif
+//#endif
     
     //Start the UMC vote.
     new bool:result = UMC_StartVote(
